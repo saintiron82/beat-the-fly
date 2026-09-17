@@ -76,7 +76,7 @@
       <option value="4">지옥 — 30조각</option>
     </select></span>
   <span><label>🪰 초파리 가속</label>
-    <input type="range" id="speed" min="0" max="9" value="3" style="width:110px;vertical-align:middle">
+    <input type="range" id="speed" min="0" max="14" value="4" style="width:140px;vertical-align:middle">
     <span class="sub" id="speedv">×1</span></span>
   <span><label>그림</label> <select id="pic"></select>
     <button class="off" id="pickImg">내 그림</button>
@@ -126,7 +126,8 @@ const SIZES = [[2,3],[3,4],[4,4],[4,5],[5,6]];
 const MAPW = 30, MAPH = 20, PRW = 48, PRH = 30;
 // 초파리의 정직한 속도는 후보 한 장에 18 ms -- 뇌가 하나라 한 장씩 보고,
 // 광수용체에서 라미나까지 12~22 ms가 걸린다. 가속은 그걸 몇 배로 돌리는가다.
-const BASE_MS = 18, SPEEDS = [0.1, 0.2, 0.35, 1, 1.5, 2, 3, 5, 7, 10];
+const BASE_MS = 18, SPEEDS = [0.1, 0.25, 0.5, 0.75, 1, 1.25, 1.5, 2, 2.5,
+                             3, 4, 5, 6, 8, 10];
 let fly = null, S = {};
 
 // ------------------------------------------------------------------ 대사
