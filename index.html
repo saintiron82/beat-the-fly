@@ -75,7 +75,7 @@
       <option value="3">아주 어려움 — 20조각</option>
       <option value="4">지옥 — 30조각</option>
     </select></span>
-  <span><label>초파리 가속</label>
+  <span><label>🪰 초파리 가속</label>
     <input type="range" id="speed" min="0" max="9" value="3" style="width:110px;vertical-align:middle">
     <span class="sub" id="speedv">×1</span></span>
   <span><label>그림</label> <select id="pic"></select>
@@ -244,10 +244,20 @@ function start(){
 function countdown(left){
   if(left > 0){
     S.locked = true;
+    for(const v of ["youVeil","flyVeil"]){
+      $(v).textContent = left;
+      $(v).style.color = "#e6e9ef";
+      $(v).style.fontSize = "72px";
+      $(v).classList.add("on");
+    }
     $("clock").textContent = left;
     $("hint").textContent = "준비…";
-    S.count = setTimeout(()=>countdown(left-1), 1000);
+    S.count = setTimeout(()=>countdown(left-1), 900);
     return;
+  }
+  for(const v of ["youVeil","flyVeil"]){
+    $(v).classList.remove("on");
+    $(v).style.fontSize = "";
   }
   $("clock").textContent = "0.0초";
   $("hint").textContent = "같은 그림, 같은 섞인 상태. 먼저 맞추면 이긴다.";
